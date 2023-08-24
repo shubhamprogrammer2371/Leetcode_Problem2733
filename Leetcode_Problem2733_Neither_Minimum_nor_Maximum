@@ -1,0 +1,10 @@
+int cmpfunc(const void* a , const void* b)
+{
+    return (*(int*)a - *(int*)b);
+}
+int findNonMinOrMax(int* nums, int numsSize){
+    if(numsSize == 1 || numsSize == 2)
+        return -1;
+    qsort(nums,numsSize,sizeof(int),cmpfunc);
+    return nums[1];
+}
